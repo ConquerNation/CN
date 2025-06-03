@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Request for Inquiry - TQL 3PL</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <section class="contact">
+    <div class="contact-container">
+      <h2>Request for Inquiry</h2>
+      <form action="submit.php" method="POST">
+        <label for="company_name">Company Name</label>
+        <input type="text" name="company_name" required />
+
+        <label for="contact_person">Contact Person</label>
+        <input type="text" name="contact_person" required />
+
+        <label for="email">Email</label>
+        <input type="email" name="email" required />
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" name="phone" />
+
+        <label for="service_type">Service Interested In</label>
+        <select name="service_type" required>
+          <option>Warehouse Storage</option>
+          <option>Transloading</option>
+          <option>Drayage</option>
+          <option>Final Mile Delivery</option>
+          <option>Cross-Docking</option>
+        </select>
+
+        <label for="start_date">Estimated Start Date</label>
+        <input type="date" name="start_date" />
+
+        <label for="inquiry_details">Details</label>
+        <textarea name="inquiry_details" rows="5" placeholder="Please describe your service needs..."></textarea>
+
+        <button type="submit">Submit Inquiry</button>
+      </form>
+    </div>
+  </section>
+
+</body>
+</html>
