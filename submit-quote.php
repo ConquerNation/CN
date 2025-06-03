@@ -1,5 +1,4 @@
 <?php
-// Turn on error reporting for debugging
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
@@ -7,41 +6,42 @@ ini_set('display_errors', 1);
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "quotes_db";
+$dbname = "quotes_db"; // make sure this matches your database
 
-// Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
 if ($conn->connect_error) {
     die("❌ Connection failed: " . $conn->connect_error);
 }
 
-// Get POST data
-$company_name     = $_POST['company_name'];
-$contact_person   = $_POST['contact_person'];
-$email            = $_POST['email'];
-$phone            = $_POST['phone'];
-$service_type     = $_POST['service_type'];
-$start_date       = $_POST['start_date'];
-$inquiry_details  = $_POST['inquiry_details'];
+// Get form data
+$email            = $_POST['email'] ?? '';
+$first_name       = $_POST['first_name'] ?? '';
+$last_name        = $_POST['last_name'] ?? '';
+$phone            = $_POST['phone'] ?? '';
+$commodity        = $_POST['commodity'] ?? '';
+$shipping_from    = $_POST['from'] ?? '';
+$shipping_to      = $_POST['to'] ?? '';
+$additional_info  = $_POST['additional_info'] ?? '';
+$services         = isset($_POST['services']) ? implode(", ", $_POST['services']) : '';
 
-// Prepare and bind
-$sql = "INSERT INTO inquiry_requests (
-    company_name, contact_person, email, phone, service_type, start_date, inquiry_details
-) VALUES (?, ?, ?, ?, ?, ?, ?)";
+// Insert into DB
+$sql = "INSERT INTO quote_requests (
+    email, first_name, last_name, phone, commodity,
+    shipping_from, shipping_to, services, additional_info
+) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("sssssss", $company_name, $contact_person, $email, $phone, $service_type, $start_date, $inquiry_details);
+$stmt->bind_param("sssssssss",
+    $email, $first_name, $last_name, $phone, $commodity,
+    $shipping_from, $shipping_to, $services, $additional_info
+);
 
-// Execute
 if ($stmt->execute()) {
-    echo "<h2>✅ Thank you! Your inquiry has been submitted.</h2>";
+    echo "<h2>✅ Quote request submitted successfully.</h2>";
 } else {
     echo "❌ Error: " . $stmt->error;
 }
 
-// Close
 $stmt->close();
 $conn->close();
 ?>

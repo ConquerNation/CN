@@ -2,205 +2,52 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Request For Quote</title>
-<link rel="stylesheet" href="style.css">
-
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #eaf2f8, #d6eaf8);
-      margin: 0;
-      padding: 40px;
-    }
-    .container {
-      max-width: 1200px;
-      background: #ffffff;
-      margin: auto;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    }
-    h2 {
-      text-align: center;
-      color: #2a4d9b;
-      margin-bottom: 30px;
-    }
-    .form-row {
-      display: flex;
-      gap: 40px;
-      flex-wrap: wrap;
-    }
-    .section-column {
-      flex: 1;
-      min-width: 300px;
-      background: #f9fbfc;
-      padding: 25px 30px;
-      border: 2px solid #d0dce9;
-      border-radius: 10px;
-    }
-    .section-title {
-      color: #1d3f72;
-      font-size: 20px;
-      font-weight: bold;
-      margin-bottom: 20px;
-      border-bottom: 1px solid #ccc;
-      padding-bottom: 6px;
-    }
-    label {
-      font-weight: 600;
-      display: block;
-      margin-top: 20px;
-    }
-    input, textarea, select {
-      width: 100%;
-      padding: 12px 15px;
-      margin-top: 8px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      font-size: 16px;
-      box-sizing: border-box;
-    }
-    textarea {
-      resize: vertical;
-    }
-    button {
-      display: block;
-      width: 100%;
-      background-color: #2a4d9b;
-      color: white;
-      font-size: 18px;
-      padding: 15px;
-      border: none;
-      border-radius: 8px;
-      margin-top: 40px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-    button:hover {
-      background-color: #1d3675;
-    }
-    @media (max-width: 800px) {
-      .form-row {
-        flex-direction: column;
-      }
-    }
-  </style>
+  <title>Get a Quote - TQL Warehousing</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <div class="container">
-    <h2>Request For Quote</h2>
-    
-    <a href="contact.html" style="display:inline-block; margin-bottom:20px; text-decoration:none;">
-      <button type="button" style="
-        background-color: #ccc;
-        color: #333;
-        font-size: 16px;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 6px;
-        cursor: pointer;
-        margin-bottom: 20px;
-      ">← Go Back</button>
-    </a>
-    <form action="submit.php" method="POST">
-    
-      <div class="form-row">
-        <div class="section-column">
-          <div class="section-title">Service Information</div>
+  <div class="quote-page">
+    <div class="quote-container">
+      <h1>Request a Quote</h1>
+      <form action="submit-quote.php" method="POST">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required />
 
-          <label>Service Location</label>
-          <input type="text" name="service_location" />
-
-          <label>Service Date(s)*</label>
-          <input type="date" name="service_date" />
-
-          <label>Commodity</label>
-          <input type="text" name="commodity" />
-
-          <label>Services Needed*</label>
-          <select name="services" required multiple>
-            <option>Cross-Docking</option>
-            <option>Rework / Restack</option>
-            <option>Storage</option>
-            <option>Transloading</option>
-            <option>Final Mile / Local Delivery</option>
-            <option>Drayage</option>
-            <option>Disposal</option>
-            <option>Yard Storage / Trailer Parking</option>
-          </select>
-
-          <label>Freight Environment*</label>
-          <select name="freight_env" required>
-            <option>Dry</option>
-            <option>Frozen</option>
-            <option>Temp Controlled</option>
-          </select>
-
-          <label>Temperature Range (°F)</label>
-          <input type="text" name="temperature_range" placeholder="Low: ___   High: ___" />
-
-          <label>Certifications</label>
-          <select name="certifications" multiple>
-            <option>Bonded</option>
-            <option>Hazmat</option>
-            <option>Food Grade</option>
-          </select>
-
-          <label>Hazmat Classes*</label>
-          <input type="text" name="hazmat_classes" />
-
-          <label>Unit Type*</label>
-          <input type="text" name="unit_type" />
-
-          <label># Of Units*</label>
-          <input type="text" name="num_units" />
-
-          <label>Space Needed (Sq Ft)</label>
-          <input type="text" name="space_needed" />
-
-          <label>Load Number</label>
-          <input type="text" name="load_number" />
+        <div class="name-group">
+          <div>
+            <label for="first_name">First Name *</label>
+            <input type="text" id="first_name" name="first_name" required />
+          </div>
+          <div>
+            <label for="last_name">Last Name</label>
+            <input type="text" id="last_name" name="last_name" />
+          </div>
         </div>
 
-        <div class="section-column">
-          <div class="section-title">Your Information</div>
+        <label for="phone">Phone</label>
+        <input type="text" id="phone" name="phone" />
 
-          <label>Company Name*</label>
-          <input type="text" name="company" required />
+        <label for="commodity">Warehouse Storage (Commodity)</label>
+        <input type="text" id="commodity" name="commodity" />
 
-          <label>First Name*</label>
-          <input type="text" name="first_name" required />
+        <label for="from">Where are you shipping from?</label>
+        <input type="text" id="from" name="from" />
 
-          <label>Last Name*</label>
-          <input type="text" name="last_name" required />
+        <label for="to">Where are you shipping to?</label>
+        <input type="text" id="to" name="to" />
 
-          <label>Email*</label>
-          <input type="email" name="email" required />
-
-          <label>Phone*</label>
-          <input type="tel" name="phone" required />
-
-          <label>Ext #</label>
-          <input type="text" name="ext" />
-
-          <label>Add Team Members</label>
-          <input type="text" name="team_members" />
-
-          <label>Notes</label>
-          <textarea name="notes" rows="5"></textarea>
-
-          <label>Target Rate ($)</label>
-          <input type="text" name="rate" />
-
-          <label>Upload Files</label>
-          <input type="file" name="attachments" multiple />
+        <div class="checkboxes">
+          <label><input type="checkbox" name="services[]" value="Container Parking" /> Container Parking</label>
+          <label><input type="checkbox" name="services[]" value="Transloads" /> Transloads</label>
         </div>
-      </div>
 
-      <button type="submit">Submit Request</button>
-    </form>
+        <label for="additional">Additional Information</label>
+        <textarea id="additional" name="additional_info" rows="4"></textarea>
+
+        <button type="submit">Submit Quote</button>
+      </form>
+    </div>
   </div>
 
 </body>

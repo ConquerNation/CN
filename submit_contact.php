@@ -13,13 +13,12 @@ if ($conn->connect_error) {
 // Capture POST data
 $full_name = $_POST['full_name'] ?? '';
 $email     = $_POST['email'] ?? '';
-$phone     = $_POST['phone'] ?? '';
 $message   = $_POST['message'] ?? '';
 
 // Insert into database
-$sql = "INSERT INTO contact_submissions (full_name, email, phone, message) VALUES (?, ?, ?, ?)";
+$sql = "INSERT INTO contact_submissions (full_name, email, message) VALUES (?, ?, ?)";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param("ssss", $full_name, $email, $phone, $message);
+$stmt->bind_param("ssss", $full_name, $email, $message);
 
 if ($stmt->execute()) {
     echo "<h2>✅ Thank you for contacting us! Your message has been saved.</h2>";
@@ -30,3 +29,4 @@ if ($stmt->execute()) {
 $stmt->close();
 $conn->close();
 ?>
+
