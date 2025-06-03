@@ -1,89 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TQL 3PL Solutions</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <title>CN Warehouse Quote</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <nav class="navbar">
-    <div class="container nav-content">
-      <div class="nav-logo">TQL 3PL</div>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="quote.html">Request a Quote</a>
-        <a href="quote.html" class="cta-button">Get Started</a>
-
-      </div>
-    </div>
-  </nav>
-
-  <section class="hero">
-    <div class="container hero-content">
-      <h1>Streamline Your Supply Chain</h1>
-      <p>Fast, flexible, and full-service third-party logistics built for modern businesses.</p>
-      <a href="quote.html" class="cta-button">Get Started</a>
-    </div>
-  </section>
-
-  <section class="services">
-    <div class="container">
-      <h2>Our Core Services</h2>
-      <div class="service-grid">
-        <div class="service-box">
-          <h3>Live Transloading</h3>
-          <p>Speedy cross-docking with real-time visibility.</p>
-        </div>
-        <div class="service-box">
-          <h3>Food-Grade Storage</h3>
-          <p>Certified clean warehousing for sensitive products.</p>
-        </div>
-        <div class="service-box">
-          <h3>Final Mile Delivery</h3>
-          <p>Precise last-mile delivery across metro areas.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <nav class="navbar">
-  <div class="nav-container">
-    <div class="logo">TQL 3PL</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="request-inquiry.html">Request a Quote</a></li>
-    </ul>
+  <header class="hero">
+  <div class="hero-overlay">
+    
+    <h1>Welcome to CN Warehouse Quote</h1>
+    <p>Reliable Warehousing Solutions Tailored to Your Logistics Needs.</p>
+    <a href="quote.html" class="cta-button">Request a Quote</a>
   </div>
-</nav>
+</header>
 
+
+  <section class="features">
+    <div class="feature">
+      <h2>Food-Grade Storage</h2>
+      <p>Clean, safe, and certified warehousing environments.</p>
+    </div>
+    <div class="feature">
+      <h2>Fast Processing</h2>
+      <p>We respond to quote requests quickly and efficiently.</p>
+    </div>
+    <div class="feature">
+      <h2>Nationwide Support</h2>
+      <p>Serving partners across all major U.S. distribution hubs.</p>
+    </div>
+  </section>
 <section class="contact">
-  <div class="container contact-container">
+  <div class="contact-container">
     <h2>Contact Us</h2>
-    <form action="contact-submit.php" method="POST">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" name="name" required>
+    <form action="submit_contact.php" method="POST">
+  <label>Full Name</label>
+  <input type="text" name="full_name" required />
 
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="email" required>
+  <label>Email</label>
+  <input type="email" name="email" required />
 
-      <label for="message">Your Message</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+  <label>Phone</label>
+  <input type="text" name="phone" />
 
-      <button type="submit">Send Message</button>
-    </form>
+  <label>Message</label>
+  <textarea name="message" rows="5" required></textarea>
+
+  <button type="submit">Send</button>
+</form>
   </div>
 </section>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 TQL 3PL Solutions. All rights reserved.</p>
-    </div>
-  </footer>
 
+  <footer>
+    <p>&copy; 2025 CN Warehouse Quote. All rights reserved.</p>
+  </footer>
 </body>
 </html>
-

@@ -1,4 +1,4 @@
-/* Reset & Base */
+/* === Reset & Base === */
 * {
   margin: 0;
   padding: 0;
@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #f4f4f4;
+  background-color: #fff;
   color: #333;
   line-height: 1.6;
 }
@@ -17,211 +17,140 @@ a {
   color: inherit;
 }
 
-/* Container */
-.container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-/* Navbar */
-.navbar {
-  background-color: #1a1a1a;
-  padding: 16px 0;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.nav-content,
-.nav-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav-logo,
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #fff;
-}
-
-.nav-links {
-  display: flex;
-  gap: 25px;
-}
-
-.nav-links a {
-  color: white;
-  font-size: 16px;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #f9a825;
-}
-
-/* Hero Section */
+/* === Hero Section === */
 .hero {
   background: url('images/warehouse-bg.jpg') center/cover no-repeat;
-  height: 500px;
+  height: 800px;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
   text-align: center;
-  position: relative;
 }
 
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5); /* dark overlay */
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 0;
 }
 
-.hero-content {
+.hero-overlay {
   position: relative;
   z-index: 1;
-  max-width: 800px;
-  padding: 40px;
+  color: #fff;
+  max-width: 700px;
+  padding: 20px;
 }
 
+
+
 .hero h1 {
-  font-size: 42px;
-  margin-bottom: 20px;
+  font-size: 36px;
+  margin-bottom: 10px;
 }
 
 .hero p {
   font-size: 18px;
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 
 .cta-button {
-  background-color: #f9a825;
+  background-color: #ff9900;
   color: white;
-  padding: 14px 28px;
+  padding: 14px 30px;
   font-size: 18px;
   font-weight: bold;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+  border-radius: 8px;
+  text-decoration: none;
+  display: inline-block;
   transition: background-color 0.3s ease;
 }
 
 .cta-button:hover {
-  background-color: #d68900;
+  background-color: #e57c00;
 }
 
-/* Services Section */
-.services {
-  background: white;
-  padding: 80px 20px;
-  text-align: center;
-}
-
-.services h2 {
-  font-size: 32px;
-  color: #002244;
-  margin-bottom: 40px;
-}
-
-.service-grid {
+/* === Features Section === */
+.features {
   display: flex;
-  flex-wrap: wrap;
-  gap: 30px;
   justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  padding: 60px 20px;
+  background: #f8f9fa;
 }
 
-.service-box {
-  background: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-  padding: 30px 25px;
-  width: 280px;
-  transition: transform 0.3s ease;
-}
-
-.service-box:hover {
-  transform: translateY(-5px);
-}
-
-.service-box h3 {
-  font-size: 20px;
-  color: #003366;
-  margin-bottom: 10px;
-}
-
-.service-box p {
-  font-size: 15px;
-  color: #555;
-}
-
-/* Footer */
-footer {
-  background-color: #1a1a1a;
-  color: white;
+.feature {
+  max-width: 300px;
   text-align: center;
-  padding: 24px 20px;
-  margin-top: 60px;
 }
 
-/* Contact Section */
+.feature h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  c
+
+
+/* === Contact Section === */
 .contact {
   background-color: #ffffff;
-  padding: 80px 20px;
+  padding: 60px 20px;
   text-align: center;
 }
 
 .contact-container {
-  max-width: 700px;
+  max-width: 600px;
   margin: 0 auto;
-  background: #f9f9f9;
+  background: #f8f9fa;
   padding: 40px;
   border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
   text-align: left;
 }
 
 .contact h2 {
-  text-align: center;
-  font-size: 28px;
+  font-size: 26px;
   margin-bottom: 30px;
-  color: #002244;
+  color: #1a1a1a;
+  text-align: center;
 }
 
-.contact label {
+form .form-group {
+  margin-bottom: 20px;
+}
+
+form label {
   display: block;
   margin-bottom: 8px;
-  font-weight: bold;
-  color: #333;
+  font-weight: 600;
 }
 
-.contact input,
-.contact textarea {
+form input,
+form textarea {
   width: 100%;
-  padding: 14px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
+  padding: 12px;
   border-radius: 6px;
+  border: 1px solid #ccc;
   font-size: 15px;
-  background-color: white;
+  background-color: #fff;
 }
 
-.contact button {
-  background-color: #f9a825;
+form button {
+  background-color: #ff9900;
   color: white;
-  padding: 14px 28px;
+  padding: 14px;
   font-size: 16px;
   font-weight: bold;
   border: none;
   border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: 100%;
+  margin-top: 10px;
 }
 
-.contact button:hover {
-  background-color: #d68900;
+form button:hover {
+  background-color: #e57c00;
 }
